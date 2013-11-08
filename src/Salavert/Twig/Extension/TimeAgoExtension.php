@@ -87,19 +87,19 @@ class TimeAgoExtension extends \Twig_Extension
         if ($distance_in_minutes <= 1){
             if ($include_seconds){
                 if ($distance_in_seconds < 5){
-                    return $this->translator->trans('less than %seconds seconds ago', array('%seconds' => 5));
+                    return $this->translator->trans('%seconds seconds ago', array('%seconds' => 5));
                 }
                 elseif($distance_in_seconds < 10){
-                    return $this->translator->trans('less than %seconds seconds ago', array('%seconds' => 10));
+                    return $this->translator->trans('%seconds seconds ago', array('%seconds' => 10));
                 }
                 elseif($distance_in_seconds < 20){
-                    return $this->translator->trans('less than %seconds seconds ago', array('%seconds' => 20));
+                    return $this->translator->trans('%seconds seconds ago', array('%seconds' => 20));
                 }
                 elseif($distance_in_seconds < 40){
-                    return $this->translator->trans('half a minute ago');
+                    return $this->translator->trans('30 seconds ago');
                 }
                 elseif($distance_in_seconds < 60){
-                    return $this->translator->trans('less than a minute ago');
+                    return $this->translator->trans('1 minute ago');
                 }
                 else {
                     return $this->translator->trans('1 minute ago');
@@ -111,10 +111,10 @@ class TimeAgoExtension extends \Twig_Extension
             return $this->translator->trans('%minutes minutes ago', array('%minutes' => $distance_in_minutes));
         }
         elseif ($distance_in_minutes <= 90){
-            return $this->translator->trans('about 1 hour ago');
+            return $this->translator->trans('1 hour ago');
         }
         elseif ($distance_in_minutes <= 1440){
-            return $this->translator->trans('about %hours hours ago', array('%hours' => round($distance_in_minutes/60)));
+            return $this->translator->trans('%hours hours ago', array('%hours' => round($distance_in_minutes/60)));
         }
         elseif ($distance_in_minutes <= 2880){
             return $this->translator->trans('1 day ago');
